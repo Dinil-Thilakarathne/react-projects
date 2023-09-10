@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #d7d4d4;
+    font-family: 'Poppins', sans-serif;
+}
+img{
+    max-width: 100%;
+}
+ul{
+    list-style: none;
+}
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+    background-color: #fff;
+
+    &__icon{
+        font-size: 2rem;
+        padding-right: 10px;
+        color: #4f46e5;
+    }
+
+    &__logo{
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding-left: 10px;
+
+        & img{
+            width: 50px;
+        }
+
+        & h1{
+            font-size: 1.25rem;
+        }
+    }
+
+    &__nav{
+        position: absolute;
+        bottom: 75px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        justify-items: stretch;
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #fff;
+
+        & .nav-item{
+            padding: 10px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #4f46e5;
+            border-radius: 10px;
+            text-align: center;
+
+            & i{
+                font-size: 1.25rem;
+            }
+
+            &:hover{
+                background-color: #4f46e5;
+                cursor: pointer;
+                color: #fff;
+            }
+        }
+
+    }
+    @media (min-width:458px) {
+        & {
+            &__nav{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+    @media (min-width:1024px) {
+        & {
+            top: 0;
+
+            &__icon{
+                display: none;
+            }
+            
+            &__nav{
+                clip-path: none !important;
+                max-width: 768px;
+                grid-template-columns: repeat(6, 1fr);
+                position: relative;
+                bottom: 0;
+                justify-content: flex-end;
+                gap: 0;
+
+                & .nav-item{
+                    padding: 0;
+                    border: none;
+                    flex-direction: row;
+                    gap: 5px;
+
+                    &:hover{
+                        background-color: transparent;
+                        color: #4f46e5;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+}
