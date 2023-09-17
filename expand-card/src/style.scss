@@ -17,7 +17,12 @@ body{
 }
 .card{
     background-color: #fff;
-    padding: 2rem 2.5rem;
-    max-width: 450px;
+    padding: 1.5rem 1.75rem;
     cursor: pointer;
+    max-width: 300px;
+
+    @media (min-width:480px) {
+        max-width: 480px;
+        padding: 2rem 2.5rem;
+    }
 }
