@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.app{
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-family: 'poppins';
+}
+
+.footer{
+    $bg-clr: #263238;
+    $text-main-clr: #fff;
+    $text-secondary-clr: #cccccc;
+    width: 100%;
+    display: grid;
+    row-gap: 2rem;
+    background-color: $bg-clr;
+    padding: 1rem 1.5rem;
+    position: relative;
+
+
+    &-company-info{
+        display: grid;
+        row-gap: 16px;
+
+        & .footer-img{
+            display: flex;
+            align-items: center;
+            
+            & span{
+                font-size: 1.75rem;
+                color: $text-main-clr;
+                font-weight: bold;
+                padding-left: 10px;
+            }
+        }
+
+        & .infos{
+            display: grid;
+            color: $text-secondary-clr
+        }
+
+        & .footer-icons {
+            display: flex;
+            align-items: center;
+            column-gap: .75rem;
+            & svg{
+                $padding : .75rem;
+                height: calc(32px + $padding);
+                width: calc(32px + $padding);
+                padding: $padding;
+                border-radius: 50%;
+                background-color: #42555f;
+                color: $text-secondary-clr;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-links{
+        display: grid;
+        row-gap: 20px;
+
+        & ul{
+            display: grid;
+            row-gap: 8px;
+            list-style: none;
+
+            & li:first-child{
+                font-size: 1.25rem;
+                color: $text-main-clr;
+                font-weight: 500;
+            }
+            & li:not(:first-child){
+                color: $text-secondary-clr;
+                cursor: pointer;
+            }
+
+        }
+    }
+    &-form{
+        display: flex;
+        flex-direction: column;
+
+        & label {
+            font-size: 1.5rem;
+            color: $text-main-clr;
+            font-weight: 500;
+        }
+        & input{
+            margin-top: 10px;
+            width: 100%;
+            border: none;
+            border-radius: .5rem;
+            padding: .75rem 1.5rem;
+        }
+    }
+    @media (min-width:648px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+            
+            &-links{
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+        }
+    }
+    @media (min-width:1012px) {
+        & {
+            grid-template-columns: repeat(3, 1fr);
+            
+            &-links{
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+        }
+    }
+    @media (min-width:1440px) {
+        & {
+            padding:  1rem calc((100vw - 1440px)/2) ;
+        }
+    }
+}
