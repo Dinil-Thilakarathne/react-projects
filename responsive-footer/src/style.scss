@@ -10,7 +10,6 @@
     justify-content: center;
     font-family: 'poppins';
 }
-
 .footer{
     $bg-clr: #263238;
     $text-main-clr: #fff;
@@ -82,6 +81,8 @@
 
         }
     }
+
+    
     &-form{
         display: flex;
         flex-direction: column;
